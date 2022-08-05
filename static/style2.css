@@ -1,0 +1,242 @@
+body {
+  background-color: rgb(243, 243, 243);
+  text-align: right;
+  font-size: 14px;
+  font-family: "IranSans";
+  font-style: italic;
+  width: 100%;
+}
+.tools{
+  float: right;
+  width: 20%;
+  position: relative;
+  right:0px;
+  left : 20%;
+  height: 100vh;
+}
+.option{
+  clear: both;
+  background-color: white;
+  width: 100%;
+  height: 80px;
+  border-color: solid rgb(243, 243, 243);
+  border-bottom: 1px solid;
+  border-radius: 0px;
+  margin: 0px;
+  font-size: 18px;
+  font-weight: 200;
+  text-align: center;
+}
+.on{
+  background-color: #c0e3e5;
+}
+.off{
+  background-color: white;
+}
+.maindiv{
+  float: right;
+  position: relative;
+  width :60%;
+  min-height: 100vh;
+  height : 100%;
+  left : 20%;
+  border-left: 1px rgb(158, 158, 158) solid;
+  border-right: 1px rgb(158, 158, 158) solid;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-top: 30px;
+}
+.div_tot{
+ display: flex; 
+ width:100%;
+}
+
+
+.fakenews{
+  display: flex;
+  text-align: center;
+  font-size: 20px;
+  font-style: oblique;
+  font-family: "IranSans";
+  height: 45px;
+  margin-bottom: 1px;
+  width: 100%;
+  color: #ffffff;
+  padding-top: 10px;
+  padding-left: 20%;
+  padding-right: 20%;
+  background-color: rgb(90, 90, 90);
+}
+
+.home_text {
+  color: black;
+  text-shadow: 1px 1px 8px #999999;
+  font-style: italic;
+  font-size: 18px;
+  margin-bottom: 40px;
+  padding: 10px;
+}
+
+.searchbar {
+  width: 100%;
+  height: 100%;
+}
+
+.searchBar {
+  border-radius: 1px;
+  position: relative;
+  min-width: 350px;
+  top: 15px;
+  height: 43px;
+  font-size: 16px;
+  border-width: 2px;
+  border-color: rgb(192, 191, 191);
+  z-index: 0;
+  background-color: white;
+}
+
+.articleItem
+{
+  width: 100%;
+  min-height: 50px;
+  height: 120px;
+  font-size: 16px;
+  font-display: right;
+  text-align: right;
+  margin-top : 10px;
+  margin-bottom: 30px;
+}
+.claimItem
+{
+  width: 100%;
+  font-size: 16px;
+  font-display: right;
+  text-align: right;
+  margin-top : 10px;
+  margin-bottom: 30px;
+}
+
+.selectItem{
+  width: 40%;
+  height: 30px;
+  font-size: 16px;
+  font-display: right;
+  text-align:  right;
+  background-color: white;
+  margin-top : 10px;
+  margin-bottom: 30px;
+  border: 1px solid rgb(199, 199, 199);
+
+}
+.select_item{
+  float:right;
+  width: 10%;
+  height:20px;
+  text-align: right;
+}
+.searchItem
+{
+  width: 100%;
+  min-height: 50px;
+  height: 120px;
+  font-size: 16px;
+  font-display: right;
+  text-align: right;
+}
+.searchButton{
+  float: right;
+  height: 50px;
+  width: 20%;
+  background-color: #00a1ab;
+  border-radius: 5px;
+  padding-right: 12px;
+  padding-top: 5px;
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+#tab_content_info {
+  width: 100%;
+}
+
+#tab_content_info_item_nam {
+  clear: both;
+  float: right;
+  /* padding: 7px; */
+  padding-right: 40px;
+  padding-top: 20px;
+  margin-top: 0px;
+  /* margin-left: 5%; */
+  height: 30px;
+  width: 8%;
+  border-left: rgb(172, 172, 172) solid 1px;
+  border-bottom: rgb(172, 172, 172) solid 1px;
+  border-radius: 0px;
+  transition: transform 500ms;
+  background-color: rgb(243, 243, 243);
+  /* border: violet solid; */
+}
+#tab_content_info_item_val {
+  float: right;
+  /* padding: 7px; */
+  margin-top: 0px;
+  min-height: 30px;
+  height: fit-content;
+  width: 73%;
+  /* margin-right: 5px; */
+  padding: 10px;
+  /* margin-top: 5px; */
+  border-radius: 0px;
+  transition: transform 500ms;
+  padding-right: 3%;
+  background-color: rgb(243, 243, 243);
+  /* border-bottom: rgb(172, 172, 172) solid 1px; */
+  border-bottom: rgb(172, 172, 172) solid 1px;
+  border-right: rgb(172, 172, 172) solid 1px;
+} 
+
+.hr_main{
+  height: 3px;
+  background-color: #00a1ab;
+}
+
+.site_number{
+  font-size: 20px;
+  font-style: oblique;
+  color:white;
+  border-radius: 5px;
+  width: 30px;
+  font-weight: bold;
+  padding-right: 5px;
+  float: right;
+  height:  30px;
+  text-align: right;
+  background-color: #00a1ab;
+}
+
+.search{
+  font-size: 20px;
+}
+
+.list_labels{
+  clear: both;
+  vertical-align: bottom;
+  width: 100%;
+  height: 30px;
+  display: flex;
+}
+
+.resultButton{
+  float: left;
+  width: 25%;
+  height: 50px;
+  font-size: 18px;
+  text-align: center;
+  font-weight: 200;
+}
+
+.stance_form{
+  height: fit-content;
+  height:500px;
+  width: 100%;;
+}

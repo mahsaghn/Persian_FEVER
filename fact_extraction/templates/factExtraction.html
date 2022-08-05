@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+{% url 'stance' as the_url %}
+<div class="stance_form" style="display: block;overflow: hidden;">
+    <form class="form_class" action="{{the_url}}" method="POST">
+        {% csrf_token %}    
+        <div style="margin-top: 60px;">
+            <div class="input-group">
+              <input type="text" id ="claim" name="claim" class="form-control" placeholder="ادعای مورد نظر خود را بنویسید" aria-label="claim"></input>
+              <span class="input-group-btn">
+                <button class="btn btn-success" style="margin-left: 2px;" type="submit">بررسی صحت!</button>
+              </span>              
+            </div>
+          </div> 
+    </form>
+</div>
+
+<div style="overflow: hidden;margin-top: 20px;" id = "results">
+    <span>مثال:</span>
+    <button onclick="ExampleClick(this)" type="button" class = "btn btn-default btn-sm example">
+       مهدی در میان مسلمانان به عنوان منجی وعده‌داده‌شده شناخته می‌شود
+    </button>
+    <button onclick="ExampleClick(this)" type="button" class = "btn btn-default btn-sm example">
+        بیژن مرتضوی چیدمان تک آهنگ ها، جمله‌بندی اثر، و لحن نت‌ها بر پایهٔ قوانین کنترپوان و هارمونی را مشخص می کند.
+    </button>
+    <br/>
+    <button onclick="ExampleClick(this)" type="button" class = "btn btn-default btn-sm example">
+        منصور مهدی زاده در بازی های المپیاد نوزدهم پکن در اولین مسابقه شکست خورد.
+    </button>
+    <button onclick="ExampleClick(this)" type="button" class = "btn btn-default btn-sm example">
+        استان آذربایجان شرقی از سمت جنوب شرق به بخش زنجان محدود شده است. 
+    </button>
+</div> 
+
+
+<div class="col-lg-6">
+{% if label %}
+
+<div class="btn-group btn-group-justified" style="text-align: center;overflow: hidden;margin-top: 20px;" role="group" aria-label="...">
+    <div class="btn-group" role="group">
+        {% if label == 'SUPPORTS' %}
+        <button type="button" class = "btn btn-success">موافق
+            <span class="glyphicon glyphicon-ok"></span>
+        </button>
+        {% else %}
+        <button type="button" class = "btn btn-default">
+            موافق
+            <span class="glyphicon glyphicon-ok"></span>
+        </button>
+        {% endif %}
+    </div>
+    <div class="btn-group" role="group">
+        {% if label == 'REFUTES' %}        
+        <button type="button" class = "btn btn-danger">مخالف
+            <span class="glyphicon glyphicon-remove"></span>
+        </button>
+        {% else %}
+        <button type="button" class = "btn btn-default">مخالف
+            <span class="glyphicon glyphicon-remove"></span>
+        </button>
+        {% endif %}
+    </div>
+    <div class="btn-group" role="group">
+        {% if label == 'NOT ENOUGH INFO' %}
+        <button type="button" class = "btn btn-warning">اطلاعات کافی نیست
+            <span class="glyphicon glyphicon-question-sign"></span>
+        </button>
+        {% else %}
+        <button type="button" class = "btn btn-default">اطلاعات کافی نیست
+            <span class="glyphicon glyphicon-question-sign"></span>
+        </button>
+        {% endif %} 
+    </div>
+  </div>
+
+{% endif %}
+
+{% if claim  %}
+    <div class="alert alert-info" role="alert" style="display: block;overflow: hidden;margin-top: 20px;">ادعا: {{claim}}</div>
+{% endif %}
+
+<div style="overflow: hidden;margin-top: 20px;" >
+{% for title, doc in docs %}
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">{{title}}</h3>
+        </div>
+        <div class="panel-body"> {{doc|safe}} </div>
+    </div>
+{% endfor %}
+</div>
+
+</div>
+
+<div class="col-lg-6">
+{% if ds_label is not None %}
+
+<div class="btn-group btn-group-justified" style="text-align: center;overflow: hidden;margin-top: 20px;" role="group" aria-label="...">
+    <div class="btn-group" role="group">
+        {% if ds_label == 'SUPPORTS' %}
+        <button type="button" class = "btn btn-success">موافق
+            <span class="glyphicon glyphicon-ok"></span>
+        </button>
+        {% else %}
+        <button type="button" class = "btn btn-default">
+            موافق
+            <span class="glyphicon glyphicon-ok"></span>
+        </button>
+        {% endif %}
+    </div>
+    <div class="btn-group" role="group">
+        {% if ds_label == 'REFUTES' %}        
+        <button type="button" class = "btn btn-danger">مخالف
+            <span class="glyphicon glyphicon-remove"></span>
+        </button>
+        {% else %}
+        <button type="button" class = "btn btn-default">مخالف
+            <span class="glyphicon glyphicon-remove"></span>
+        </button>
+        {% endif %}
+    </div>
+    <div class="btn-group" role="group">
+        {% if ds_label == 'NOT ENOUGH INFO' %}
+        <button type="button" class = "btn btn-warning">اطلاعات کافی نیست
+            <span class="glyphicon glyphicon-question-sign"></span>
+        </button>
+        {% else %}
+        <button type="button" class = "btn btn-default">اطلاعات کافی نیست
+            <span class="glyphicon glyphicon-question-sign"></span>
+        </button>
+        {% endif %} 
+    </div>
+  </div>
+
+{% endif %}
+<div style="overflow: hidden;margin-top: 20px;" >
+{% for title, doc in ds_docs %}
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            <h3 class="panel-title">{{title}}</h3>
+        </div>
+        <div class="panel-body"> {{doc|safe}} </div>
+    </div>
+{% endfor %}
+</div>
+
+</div>
+{% endblock content %}
+<!--             -->

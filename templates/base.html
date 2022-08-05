@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href='/static/bootstrap-3.3.7-dist/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="/static/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css"  type="text/css">
+    <link rel="stylesheet" type="text/css" href='/static/style.css'>
+    <script type="text/javascript" src="/static/jquery.min.js">
+    </script>
+    <script type="text/javascript" src="/static/bootstrap-3.3.7-dist/js/bootstrap.min.js">
+    </script>
+    <script type="text/javascript" src="/static/Public.js">
+    </script>
+</head>
+<body>
+    <div class="page-header">
+        <h1 style="font-weight: 800;">سامانه تشخیص صحت</h1>
+        <h3>تشخیص صحت ادعا از طریق متون صفحات ویکی پدیا</h3>
+    </div> 
+    <div class="container">
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active">
+                <a class="link-menu" href="#home" aria-controls="home" role="tab" data-toggle="tab">بررسی صحت ادعا</a></li>
+            <li role="presentation">
+                <a class="link-menu" href="#profile" aria-controls="profile" role="tab" data-toggle="tab">بررسی صحت ادعا در یک صفحه مشخص</a></li>
+            <li role="presentation">
+                <a class="link-menu" href="#messages" aria-controls="messages" role="tab" data-toggle="tab">بررسی صحت ادعا در صورت وجود شواهد</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="home">
+                {% block content %}
+                {% endblock content %}
+            </div>
+            <div role="tabpanel" class="tab-pane" id="profile">
+                بررسی صحت ادعا در یک صفحه مشخص
+            </div>
+            <div role="tabpanel" class="tab-pane" id="messages">
+                بررسی صحت ادعا در صورت وجود شواهد
+            </div>
+        </div>
+    </div>    
+    <!-- <div class = "div_tot">
+        
+        <div class = "tools">
+            {% url 'stance'  as stance %}
+            {% url 'google'  as google %}
+            <a href="{{google}}"><button class= 'option on' >جست و جو در گوگل</button></a>
+            <a href="{{stance}}"><button class= 'option on' >تشخیص موضع</button></a>
+         </div>
+    </div> -->
+    <div class="page-footer">
+        <h6>Copyright 2020</h6>
+    </div>    
+</body>
+</html>

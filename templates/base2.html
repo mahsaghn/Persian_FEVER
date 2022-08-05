@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href='/static/style.css'>
+    <!-- <script type="text/javascript" src="/static/homepage.js"></script> -->
+    <!-- <script type="text/javascript" src="/static/stanceDetection.js"></script> -->
+    <script>
+    </script>
+</head>
+<body>
+    <p class='fakenews'>Fake news detection</p>
+    <div class = "div_tot">
+        <div class = "maindiv">
+               {% block content %}
+               {% endblock content %}
+           
+        </div>
+        <div class = "tools">
+            {% url 'stance'  as stance %}
+            {% url 'google'  as google %}
+            <a href="{{google}}"><button class= 'option on' >جست و جو در گوگل</button></a>
+            <a href="{{stance}}"><button class= 'option on' >تشخیص موضع</button></a>
+         </div>
+    </div>
+</body>
+</html>
